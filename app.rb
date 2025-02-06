@@ -12,3 +12,8 @@ get("/") do
   @currencies = @parsed_response.fetch("currencies")
   erb(:homepage)
 end
+
+get("/:first_symbol") do
+  @symbol = params.fetch("first_symbol")
+  erb(:step_one)
+end
